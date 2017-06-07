@@ -241,22 +241,42 @@ write.csv(data,"/Users/heatherkrause/Dropbox/Jennifer OCAD/OCAD data recoded.csv
 
 ###################
 #mental health
-fit1 <- glm(SuicideBinary~MHC,family="binomial",data=data)
+fit0 <- glm(SuicideBinary~MHC,family="binomial",data=data)
 
 #mental health by sociodem
 
+fit1 <- glm(SuicideBinary~MHC*Age,family="binomial",data=data)#no
+fit1b <- glm(SuicideBinary~Age,family="binomial",data=data) #no
+fit2 <- glm(SuicideBinary~MHC*as.factor(Ethnicity),family="binomial",data=data) #no
+fit3 <- glm(SuicideBinary~MHC*Gender,family="binomial",data=data) #no
+fit4 <- glm(SuicideBinary~MHC*as.factor(NQ48),family="binomial",data=data)#no
+fit4b <- glm(SuicideBinary~as.factor(NQ48),family="binomial",data=data)#yes
+fit5 <- glm(SuicideBinary~MHC*Gender*as.factor(NQ48),family="binomial",data=data)#no
+
 #mental health by by mental health services
+
+fit6 <- glm(SuicideBinary~MHC*MHS,family="binomial",data=data)#no
+
+fit7 <- glm(SuicideBinary~MHS,family="binomial",data=data)#yes
 
 ####################
 #physical health
-
+fit8 <- glm(SuicideBinary~PHC*Age,family="binomial",data=data)#no
+fit9 <- glm(SuicideBinary~PHC*as.factor(Ethnicity),family="binomial",data=data) #no
+fit10 <- glm(SuicideBinary~PHC*Gender,family="binomial",data=data) #no
+fit11 <- glm(SuicideBinary~PHC*as.factor(NQ48),family="binomial",data=data)#no
+fit12 <- glm(SuicideBinary~PHC*Gender*as.factor(NQ48),family="binomial",data=data)#no
 
 
 #physical health by sociodem
 
 ###################
 #sleep disorders
-
+fit13 <- glm(SuicideBinary~SD*Age,family="binomial",data=data)#no
+fit14 <- glm(SuicideBinary~SD*as.factor(Ethnicity),family="binomial",data=data) #no
+fit15 <- glm(SuicideBinary~SD*Gender,family="binomial",data=data) #no
+fit16 <- glm(SuicideBinary~SD*as.factor(NQ48),family="binomial",data=data)#no
+fit17 <- glm(SuicideBinary~SD*Gender*as.factor(NQ48),family="binomial",data=data)#no
 
 
 #sleep by socio
@@ -276,7 +296,11 @@ fit1 <- glm(SuicideBinary~MHC,family="binomial",data=data)
 
 #negative affect by socio
 
-
+fit18 <- glm(SuicideBinary~NAF*Age,family="binomial",data=data)#no
+fit19 <- glm(SuicideBinary~NAF*as.factor(Ethnicity),family="binomial",data=data) #no
+fit20 <- glm(SuicideBinary~NAF*Gender,family="binomial",data=data) #no
+fit21 <- glm(SuicideBinary~NAF*as.factor(NQ48),family="binomial",data=data)#no
+fit22 <- glm(SuicideBinary~NAF*Gender*as.factor(NQ48),family="binomial",data=data)#no
 
 
 
