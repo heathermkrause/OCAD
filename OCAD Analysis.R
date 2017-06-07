@@ -45,10 +45,35 @@ data$SuicideBinary[data$SuicideSum>0]<- 1
 #Formatting predictor variables
 
 #age
+
+data$Age <- data$NQ46
 #gender
+
+data$Gender <- data$NQ47
 #ethnicity
+
+data$Ethnicity <- 13
+data$Ethnicity[data$RNQ54A==1]<-1
+data$Ethnicity[data$RNQ54B==1]<-2
+data$Ethnicity[data$RNQ54C==1]<-3
+data$Ethnicity[data$RNQ54D==1]<-4
+data$Ethnicity[data$RNQ54E==1]<-5
+data$Ethnicity[data$RNQ54F==1]<-6
+data$Ethnicity[data$RNQ54G==1]<-7
+data$Ethnicity[data$RNQ54H==1]<-8
+data$Ethnicity[data$RNQ54I==1]<-9
+data$Ethnicity[data$RNQ54J==1]<-10
+data$Ethnicity[data$RNQ54K==1]<-11
+data$Ethnicity[data$RNQ54L==1]<-12
+
 #sexual orientation
 #international student status
+
+data$International[data$NQ55==1] <-0
+data$International[data$NQ55==2] <-1
+
+#PAREQ physical activity guidelines (0 is not met)
+
 #MHC Mental Health Condition (Binary and Severity)
 data$MHC1 <-0
 data$MHC1[data$NQ31A1>1]<- 1
@@ -190,3 +215,5 @@ data$NAFSUM <- data$NAF1+data$NAF2+data$NAF3+data$NAF4+
 
 data$NAF <- 0
 data$NAF[data$NAFSUM>0]<- 1
+
+write.csv(data,"/Users/heatherkrause/Dropbox/Jennifer OCAD/OCAD data recoded.csv")
