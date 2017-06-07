@@ -216,4 +216,22 @@ data$NAFSUM <- data$NAF1+data$NAF2+data$NAF3+data$NAF4+
 data$NAF <- 0
 data$NAF[data$NAFSUM>0]<- 1
 
+#mental health service use
+data$MHS1 <- 0
+data$MHS1[data$NQ34A==2]<- 1
+
+data$MHS2 <- 0
+data$MHS2[data$NQ34B==2]<- 1
+
+data$MHS3 <- 0
+data$MHS3[data$NQ34C==2]<- 1
+
+data$MHS4 <- 0
+data$MHS4[data$NQ34D==2]<- 1
+
+data$MHSSUM <- data$MHS1+data$MHS2+data$MHS3+data$MHS4
+
+data$MHS <- 0
+data$MHS[data$MHSSUM>0]<-1
+
 write.csv(data,"/Users/heatherkrause/Dropbox/Jennifer OCAD/OCAD data recoded.csv")
