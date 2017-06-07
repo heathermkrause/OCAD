@@ -91,13 +91,77 @@ data$MHCSUM <- data$MHC1+data$MHC2+data$MHC3+data$MHC4+data$MHC5+data$MHC6+
   data$MHC7+data$MHC8+data$MHC9+data$MHC10+data$MHC11+data$MHC12+data$MHC13+
   data$MHC14+data$MHC15+data$MHC16+data$MHC17+data$MHC18
 
-
+data$MHC <- 0
+data$MHC[data$MHCSUM>0]<- 1
 
 #PHC Physical Health Condition (Binarity and Severity)
 data$PHC1<- 0
 data$PHC1[data$NQ41A1>1]<-1
+data$PHC2<- 0
+data$PHC2[data$NQ41A2>1]<-1
+data$PHC3<- 0
+data$PHC3[data$NQ41A3>1]<-1
+data$PHC4<- 0
+data$PHC4[data$NQ41A4>1]<-1
+data$PHC5<- 0
+data$PHC5[data$NQ41A5>1]<-1
+data$PHC6<- 0
+data$PHC6[data$NQ41A6>1]<-1
+data$PHC7<- 0
+data$PHC7[data$NQ41A7>1]<-1
+data$PHC8<- 0
+data$PHC8[data$NQ41A8>1]<-1
+data$PHC9<- 0
+data$PHC9[data$NQ41A9>1]<-1
+data$PHC10<- 0
+data$PHC10[data$NQ41A10>1]<-1
+data$PHC11<- 0
+data$PHC11[data$NQ41A11>1]<-1
+data$PHC12<- 0
+data$PHC12[data$NQ41A12>1]<-1
+data$PHC13<- 0
+data$PHC13[data$NQ41A13>1]<-1
+data$PHC14<- 0
+data$PHC14[data$NQ41B1>1]<-1
+data$PHC15<- 0
+data$PHC15[data$NQ41B2>1]<-1
+data$PHC16<- 0
+data$PHC16[data$NQ41B3>1]<-1
+data$PHC17<- 0
+data$PHC17[data$NQ41B4>1]<-1
+data$PHC18<- 0
+data$PHC18[data$NQ41B5>1]<-1
+data$PHC19<- 0
+data$PHC19[data$NQ41B6>1]<-1
+data$PHC20<- 0
+data$PHC20[data$NQ41B7>1]<-1
+data$PHC21<- 0
+data$PHC21[data$NQ41B8>1]<-1
+data$PHC22<- 0
+data$PHC22[data$NQ41B9>1]<-1
+data$PHC23<- 0
+data$PHC23[data$NQ41B10>1]<-1
+data$PHC24<- 0
+data$PHC24[data$NQ41B11>1]<-1
+data$PHC25<- 0
+data$PHC25[data$NQ41B12>1]<-1
+
+data$PHCSUM <- data$PHC1+data$PHC2+data$PHC3+data$PHC4+data$PHC5+data$PHC6+data$PHC7+data$PHC8+data$PHC9+data$PHC10+
+  data$PHC11+data$PHC12+data$PHC13+data$PHC14+data$PHC15+data$PHC16+data$PHC17+data$PHC18+data$PHC19+data$PHC20+
+  data$PHC21+data$PHC22+data$PHC23+data$PHC24+data$PHC25
+
+data$PHC <- 0
+data$PHC[data$PHCSUM>0]<- 1
 
 #SD Sleep Disturbance (Binary and Severity)
+data$SD1 <-0
+data$SD1[data$NQ31A7>1]<- 1
+data$SD2 <-0
+data$SD1[data$NQ31A8>1]<- 1
+
+data$SDSUM <- data$SD1+data$SD2
+data$SD <- 0
+data$SD[data$SDSUM>0]<-1
 
 
 
