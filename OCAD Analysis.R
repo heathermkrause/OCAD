@@ -234,6 +234,19 @@ data$MHSSUM <- data$MHS1+data$MHS2+data$MHS3+data$MHS4
 data$MHS <- 0
 data$MHS[data$MHSSUM>0]<-1
 
+
+#Abuse
+data$AB1 <- 0
+data$AB1[data$NQ6A==2]<- 1
+data$AB2 <- 0
+data$AB2[data$NQ6B==2]<- 1
+data$AB3 <- 0
+data$AB3[data$NQ6C==2]<- 1
+
+data$ABSUM <- data$AB1+data$AB2+data$AB3
+data$AB <- 0
+data$AB[data$ABSUM>0]<-1
+
 write.csv(data,"/Users/heatherkrause/Dropbox/Jennifer OCAD/OCAD data recoded.csv")
 
 
@@ -277,7 +290,8 @@ fit14 <- glm(SuicideBinary~SD*as.factor(Ethnicity),family="binomial",data=data) 
 fit15 <- glm(SuicideBinary~SD*Gender,family="binomial",data=data) #no
 fit16 <- glm(SuicideBinary~SD*as.factor(NQ48),family="binomial",data=data)#no
 fit17 <- glm(SuicideBinary~SD*Gender*as.factor(NQ48),family="binomial",data=data)#no
-
+fit13b <- glm(SuicideBinary~SD*AB,family="binomial",data=data)#no
+fit13c <- glm(SuicideBinary~SD,family="binomial",data=data)#no
 
 #sleep by socio
 
@@ -337,10 +351,23 @@ fit35 <- glm(SuicideBinary~NQ48*NQ6A,family="binomial",data=data)#no
 fit36 <- glm(SuicideBinary~NQ48*NQ6B,family="binomial",data=data)#no
 fit37 <- glm(SuicideBinary~NQ48*NQ6C,family="binomial",data=data)#no
 
+fit38 <- glm(SuicideBinary~AB,family="binomial",data=data)#no
+
 
 #abuse by mental health service
 NQ6C
 NQ5D
 
-fit40 <- glm(SuicideBinary~MHC+as.factor(NQ48)+NQ6A,family="binomial",data=data)#no
+fit41 <- glm(SuicideBinary~as.factor(NQ48)+AB+MHC,family="binomial",data=data)#best model
+
+
+pred <- expand.grid(NQ48=c(1,2,3,4),AB=c(0,1),MHC=c(0,1),MHS=c(0,1),SD=c(0,1))
+pred$pred41 <- predict(fit41,newdata=pred, type="response")
+pred$pred0 <- predict(fit0,newdata=pred, type="response")
+pred$pred4b <- predict(fit4b,newdata=pred, type="response")
+pred$pred7 <- predict(fit7,newdata=pred, type="response")
+pred$pred13c <- predict(fit13c,newdata=pred, type="response")
+pred$pred38 <- predict(fit38,newdata=pred, type="response")
+
+write.csv(pred,"/Users/heatherkrause/Dropbox/Jennifer OCAD/OCAD Preds.csv")
 
