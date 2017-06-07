@@ -33,3 +33,8 @@ data$SuicideAttempt <- 0
 data$SuicideAttempt[data$NQ30K==3]<- 1
 data$SuicideAttempt[data$NQ30K==4]<- 1
 data$SuicideAttempt[data$NQ30K==5]<- 1
+
+data$SuicideSum <- data$SuicideAttempt+data$SuicideThought+data$SelfHarm
+
+data$SuicideBinary <- 0
+data$SuicideBinary[data$SuicideSum>0]<- 1
