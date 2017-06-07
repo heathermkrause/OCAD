@@ -353,6 +353,8 @@ fit37 <- glm(SuicideBinary~NQ48*NQ6C,family="binomial",data=data)#no
 
 fit38 <- glm(SuicideBinary~AB,family="binomial",data=data)#no
 
+fit50 <- glm(SuicideBinary~NQ48,family="binomial",data=data)#no
+
 
 #abuse by mental health service
 NQ6C
