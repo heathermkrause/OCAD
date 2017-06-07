@@ -235,3 +235,74 @@ data$MHS <- 0
 data$MHS[data$MHSSUM>0]<-1
 
 write.csv(data,"/Users/heatherkrause/Dropbox/Jennifer OCAD/OCAD data recoded.csv")
+
+
+#Build the models
+
+###################
+#mental health
+fit1 <- glm(SuicideBinary~MHC,family="binomial",data=data)
+
+#mental health by sociodem
+
+#mental health by by mental health services
+
+####################
+#physical health
+
+
+
+#physical health by sociodem
+
+###################
+#sleep disorders
+
+
+
+#sleep by socio
+
+#sleep by mental health
+
+
+
+
+
+###################
+#Negative affect
+
+
+
+
+
+#negative affect by socio
+
+
+
+
+
+#negative affect by mental health
+
+
+
+#negative affect by mental health treatment
+
+
+
+###################
+#Abuse
+
+
+
+
+#abuse by socio
+
+
+
+#abuse by mental health
+
+
+
+#abuse by mental health service
+NQ6C
+NQ5D
+
