@@ -290,7 +290,7 @@ fit17 <- glm(SuicideBinary~SD*Gender*as.factor(NQ48),family="binomial",data=data
 ###################
 #Negative affect
 
-
+fit23 <- glm(SuicideBinary~NAF,family="binomial",data=data)#no
 
 
 
@@ -305,7 +305,7 @@ fit22 <- glm(SuicideBinary~NAF*Gender*as.factor(NQ48),family="binomial",data=dat
 
 
 #negative affect by mental health
-
+fit24 <- glm(SuicideBinary~NAF*MHC,family="binomial",data=data)#no
 
 
 #negative affect by mental health treatment
@@ -324,9 +324,23 @@ fit22 <- glm(SuicideBinary~NAF*Gender*as.factor(NQ48),family="binomial",data=dat
 
 #abuse by mental health
 
+fit25 <- glm(SuicideBinary~MHC,family="binomial",data=data)#yes
+
+fit30 <- glm(SuicideBinary~MHC+NQ5D,family="binomial",data=data)#yes
+fit31 <- glm(SuicideBinary~MHC+NQ6A,family="binomial",data=data)#yes
+fit32 <- glm(SuicideBinary~MHC+NQ6B,family="binomial",data=data)#yes
+fit33 <- glm(SuicideBinary~MHC+NQ6C,family="binomial",data=data)#yes
+
+
+fit34 <- glm(SuicideBinary~NQ48*NQ5D,family="binomial",data=data) #no
+fit35 <- glm(SuicideBinary~NQ48*NQ6A,family="binomial",data=data)#no
+fit36 <- glm(SuicideBinary~NQ48*NQ6B,family="binomial",data=data)#no
+fit37 <- glm(SuicideBinary~NQ48*NQ6C,family="binomial",data=data)#no
 
 
 #abuse by mental health service
 NQ6C
 NQ5D
+
+fit40 <- glm(SuicideBinary~MHC+as.factor(NQ48)+NQ6A,family="binomial",data=data)#no
 
